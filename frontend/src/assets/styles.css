@@ -1,0 +1,84 @@
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.descripcion {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.panel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+
+/* Styles para los campos */
+
+.campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.btn-calcular {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  background-color: #42b883;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-calcular:hover {
+  background-color: #3a9b6f;
+}
+
+.resultado {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #e6ffed;
+  border: 1px solid #b2f5c4;
+}
+
+.errores {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #ffe6e6;
+  border: 1px solid #f5b2b2;
+}
+
+.errores pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
