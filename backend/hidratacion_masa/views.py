@@ -17,15 +17,17 @@ class CalculoHidratacionMasa(APIView):
             cantidad_harina = serializer.validated_data['cantidad_harina']
             cantidad_agua = serializer.validated_data['cantidad_agua']
             
-            hidratacion = (cantidad_agua / cantidad_harina) * 100
+            hidratacion = round((cantidad_agua / cantidad_harina) * 100, 2)
             
             return Response(
                 {
                     "hidratacion": hidratacion,
                     "detalle": {
-                        "Harina total": cantidad_harina,
-                        "Agua total": cantidad_agua,
+                        "cantidad_harina": cantidad_harina,
+                        "cantidad_agua": cantidad_agua,
                     }
                 },
                 status=status.HTTP_200_OK
             )
+        else: 
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
