@@ -45,6 +45,7 @@ async function calcularHidratacion() {
     loading.value = false
   }
 }
+
 </script>
 
 <template>
@@ -61,12 +62,12 @@ async function calcularHidratacion() {
 
       <div class="campo">
         <label>Cantidad Harina:</label>
-        <input type="number" v-model="cantidadHarina" />
+        <input type="number" min="0" v-model="cantidadHarina" @input="cantidadHarina = Math.max(0, cantidadHarina)" />
       </div>
 
       <div class="campo">
         <label>Cantidad Agua:</label>
-        <input type="number" v-model="cantidadAgua" />
+        <input type="number" min="0" v-model="cantidadAgua" @input="cantidadHarina = Math.max(0, cantidadHarina)" />
       </div>
 
       <button class="btn-calcular" @click="calcularHidratacion" :disabled="loading">
