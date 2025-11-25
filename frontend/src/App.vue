@@ -80,11 +80,26 @@ async function calcularHidratacion() {
 
       <div v-if="errores" class="errores">
         <h2>Errores</h2>
-        <pre>{{ errores }}</pre>
+
+        <ul class="lista-errores">
+          <li v-for="(mensajes, campo) in errores" :key="campo">
+            <strong v-if="campo !== 'non_field_errors' && campo !== 'detalle'">
+              {{ campo }}:
+            </strong>
+            <strong v-else>
+              General:
+            </strong>
+
+            <span v-if="Array.isArray(mensajes)">
+              {{ mensajes.join(' ') }}
+            </span>
+            <span v-else>
+              {{ mensajes }}
+            </span>
+          </li>
+        </ul>
       </div>
-
     </div>
-
   </div>
 </template>
 
