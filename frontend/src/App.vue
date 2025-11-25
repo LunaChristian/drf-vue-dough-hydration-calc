@@ -74,8 +74,7 @@ async function calcularHidratacion() {
       </button>
 
       <div v-if="resultado" class="resultado">
-        <h2>Resultado</h2>
-        <p><strong>Hidratacion total:</strong> {{ resultado.hidratacion }} %</p>
+        <h3 class="resultado-dato">Hidratacion total: {{ resultado.hidratacion }} %</h3>
       </div>
 
       <div v-if="errores" class="errores">
